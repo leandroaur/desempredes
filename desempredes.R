@@ -1,5 +1,5 @@
 #script content
-#packages needed for this project
+#packages needed for this project.
 install.packages("tidyverse")
 library(tidyverse)
 tidyverse_update()
