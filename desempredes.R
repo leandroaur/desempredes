@@ -10,9 +10,9 @@ nperf<-read.csv("/Users/leandroaurelio/Downloads/my_nPerf_results-2.csv")
 nperfres2<-read.csv("/Users/leandroaurelio/Downloads/nPerfres.csv")
 
 #read new csv files
-nperftot <- read.csv("/Users/leandroaurelio/Downloads/nperfrestot.csv")
-nperf3g <- read.csv("/Users/leandroaurelio/Downloads/nperfres3g.csv")
-nperf4g <- read.csv("/Users/leandroaurelio/Downloads/nperfres4g.csv")
+nperftot <- read.csv("data/nperfrestot.csv")
+nperf3g <- read.csv("data/nperfres3g.csv")
+nperf4g <- read.csv("data/nperfres4g.csv")
 
 ###General observation according to weather###
 
