@@ -1,13 +1,10 @@
 #script content
-#packages needed for this project.
-install.packages("tidyverse")
+#libraries needed for this project.
 library(tidyverse)
 tidyverse_update()
 sessionInfo(c("tidyverse"))
-install.packages("ggnewscale")
-#nperf file
-nperf<-read.csv("/Users/leandroaurelio/Downloads/my_nPerf_results-2.csv")
-nperfres2<-read.csv("/Users/leandroaurelio/Downloads/nPerfres.csv")
+library(ggnewscale)
+library(dplyr)
 
 #read new csv files
 nperftot <- read.csv("data/nperfrestot.csv")
@@ -92,8 +89,6 @@ p <- ggplot(df3, aes(x=Period, y=SPEED_DOWNLOAD_AVG, fill=NET_NAME)) +
 p + scale_fill_brewer(palette="Paired") + theme_minimal()
 ####
 
-clear
-clc
 #4G for bar plot (professor suggestion, test3)
 #+++++++++++++++++++++++++
 # Function to calculate the mean and the standard deviation
@@ -104,11 +99,6 @@ clc
 #to be summariezed
 # groupnames : vector of column names to be used as
 # grouping variables
-install.packages("plyr")
-install.packages("tydiverse")
-library(tidyverse)
-tidyverse_update()
-library(plyr)
 
 data_summary <- function(data, varname, groupnames){
   require(plyr)
@@ -148,11 +138,6 @@ p + scale_fill_brewer(palette="Paired") + theme_minimal()
 #to be summariezed
 # groupnames : vector of column names to be used as
 # grouping variables
-install.packages("plyr")
-install.packages("tydiverse")
-library(tidyverse)
-tidyverse_update()
-library(plyr)
 
 data_summary <- function(data, varname, groupnames){
   require(plyr)
@@ -228,7 +213,7 @@ g <- ggplot(nperfselect, aes(SPEED_DOWNLOAD_AVG, Period)) +
   labs(subtitle="dB: Measurement Power and Period (3G)",
        title="Bubble chart")
 
-g + geom_jitter(aes(col=NET_NAME, size=MOBILE_RSSI_END)) #+ 
+g + geom_point(aes(col=NET_NAME, size=MOBILE_RSSI_END)) #+ 
   #geom_smooth(aes(col=SPEED_UPLOAD_AVG), method="lm", se=F)
 #colocar o nome da metrica legivel xlabel,ylabel - (potencia sinal x vazao), separar
 #por operadora, tentar separar por dia, (experimentar dar um numero para cada medicao)
