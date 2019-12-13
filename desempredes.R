@@ -123,6 +123,8 @@ p <- ggplot(df3, aes(x=Period, y=SPEED_DOWNLOAD_AVG, fill=NET_NAME)) +
   labs(subtitle="Throuput (Kbps) x Periodo",
        title="Ambiente 4G")+ 
   geom_bar(stat="identity", position=position_dodge()) +
+  geom_text(aes(label= round(SPEED_DOWNLOAD_AVG, digits = 2) ), vjust=-0.3, size=3.5)+
+  theme_minimal()+
   geom_errorbar(aes(ymin=SPEED_DOWNLOAD_AVG-sd, ymax=SPEED_DOWNLOAD_AVG+sd), width=.2,
                 position=position_dodge(.9))
 
