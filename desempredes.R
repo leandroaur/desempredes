@@ -32,6 +32,7 @@ ggplot(data = nperf3g) +
   labs(subtitle="Potência de sinal (dBm) x Vazão (Kbps) - Local",
        title="Ambiente 3G")+
   geom_point(mapping = aes(x = LOC_CODE, y = NET_NAME, color = MOBILE_RSSI_END, size = SPEED_DOWNLOAD_AVG))+
+#issues when try to add geom_text for SPEED_DOWNLOAD_AVG
 guides(size=guide_legend(override.aes=list(colour="red")))
 
 #4G scenario
